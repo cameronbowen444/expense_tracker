@@ -31,7 +31,7 @@ module.exports = {
                     bcrypt.compare(req.body.password, userRecord.password)
                         .then((isPasswordValid) => {
                             if(isPasswordValid){
-                                console.log("Great")
+                                console.log("Great");
                                 res.cookie(
                                     "userToken",
                                     jwt.sign(
@@ -48,9 +48,7 @@ module.exports = {
                                         }
                                 ).json({
                                     message: "Succesfully",
-                                    userLoggedIn: userRecord.email,
                                     userLoggedIn: userRecord.username
-                                    // userId: userRecord._id
                                 })
                             }
                             else{
