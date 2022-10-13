@@ -11,6 +11,7 @@ require('./config/mongoose.config');
 require('./routes/user.routes')(app);
 // require('./routes/category.routes')(app);
 require('./routes/expense.routes')(app);
+require('jsonwebtoken');
 
 app.listen(8000, () => {
     console.log("Listening to port 8000!");
