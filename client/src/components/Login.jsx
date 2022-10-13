@@ -19,7 +19,6 @@ const Login = () => {
                 console.log(res, "res");
                 console.log(res.data, "is res data!");
                 navigate(`/dashboard/${res.data.userLoggedIn}`);
-                return;
             })
             .catch((err) => {
                 console.log(err.response.data);
