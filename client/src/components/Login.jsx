@@ -12,7 +12,9 @@ const Login = () => {
         e.preventDefault();
         const postData = {email, password};
         axios
-            .post("http://localhost:8000/api/login", postData)
+            .post("http://localhost:8000/api/login", postData, {
+                withCredentials: true
+            })
             .then((res) => {
                 console.log(res, "res");
                 console.log(res.data, "is res data!");
