@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+  color: rgb(226, 226, 213);
+}
+.navbar-brand{
+  color: white;
+}
+body{
+  background: radial-gradient(rgb(2, 2, 108), rgb(69, 69, 186)) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+}
+.center-head{
+  margin: 200px 250px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid white;
+  
+}
+.app-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-desc{
+  margin-top: 30px;
+}
+.head{
+  font-size: 60px;
+}
+.main-btn{
+  margin: 40px;
+  border: 1px solid white;
+  color: rgb(226, 226, 213);;
+  text-decoration: none;
+  padding: 15px 55px;
+  border-radius: 10px;
+}
+.main-btn:hover{
+  background-color: white;
+  color: black;
+}
+.navbar{
+  border-bottom: 1px solid white;
+}
+.signin-body{
+  margin: 120px auto;
+  width: 550px;
+  padding: 25px 95px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: radial-gradient(rgb(2, 2, 108), rgb(69, 69, 186));
+  border: 1px solid white;
+  border-radius: 5px;
+
+}
+.mb-3{
+  text-align: left;
+}
+.btn1{
+  margin: 15px 0px;
+  padding: 10px 95px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.btn1:hover{
+  background-color: blue;
+  color: white;
+  border: 0px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.dash-body{
+  margin: 55px;
+}
+.error-text{
+  color: red;
+  display: block;
+  margin-bottom: -5px;
+}
+.btn2{
+  margin-right: 15px;
+}
+.row1{
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: -30px;
+}
+.total{
+  padding: 10px 0px;
+  margin-bottom: -10px;
+  text-align: left;
+}
+.variable{
+  color: grey;
+  font-size: 35px;
+}
+.text-bod{
+  text-align: left;
+}
+
+.col-sm-3{
+  margin: 10px 0px;
+  font-size: 30px;
+}
+.col-sm-9{
+  margin: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.col-sm-9:hover{
+  margin: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background: white;
+  color: black;
+}
+.row2{
+  display: block;
+}
+.head1{
+  margin-top: 150px;
+  margin-bottom: -100px;
+}
+.btn3{
+  margin-top: -100px;
+}
+.btns{
+  margin-top: 30px;
+}
