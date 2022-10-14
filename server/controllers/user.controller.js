@@ -41,7 +41,7 @@ module.exports = {
                                             email: userRecord.email,
                                             username: userRecord.username
                                         },
-                                        process.env.FIRST_SECRET_KEY
+                                        ${process.env.FIRST_SECRET_KEY}
                                     ),
                                     {
                                         httpOnly: true,
