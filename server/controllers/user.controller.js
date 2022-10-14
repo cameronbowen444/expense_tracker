@@ -37,7 +37,7 @@ module.exports = {
                                     "userToken",
                                     jwt.sign(
                                         {
-                                            id: userRecord_id,
+                                            id: userRecord._id,
                                             email: userRecord.email,
                                             username: userRecord.username
                                         },
