@@ -14,5 +14,5 @@ require('./routes/expense.routes')(app);
 require('jsonwebtoken');
 
 app.listen(8000, () => {
-    console.log("Listening to port 8000!");
+    console.log("Listening to port 8000")
 })
