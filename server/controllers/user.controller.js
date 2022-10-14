@@ -14,10 +14,10 @@ module.exports = {
                 res.json({
                     successMessage: "Thank you for registering!",
                     user: newUser
-                })
+                });
             })
             .catch((err) => {
-                console.log("register not succesful!", err);
+                console.log("register not succesful!");
                 res.status(400).json(err);
             })
     },
@@ -32,25 +32,25 @@ module.exports = {
                     bcrypt.compare(req.body.password, userRecord.password)
                         .then((isPasswordValid) => {
                             if(isPasswordValid){
-                                console.log("Great");
+                                console.log("Great, Password is valid");
                                 res.cookie(
                                     "userToken",
                                     jwt.sign(
                                         {
-                                            id: userRecord,
+                                            id: userRecord_id,
                                             email: userRecord.email,
                                             username: userRecord.username
                                         },
                                         process.env.FIRST_SECRET_KEY
                                     ),
-                                        {
-                                            httpOnly: true,
-                                            expires: new Date(Date.now() + 9000000)
-                                        }
+                                    {
+                                        httpOnly: true,
+                                        expires: new Date(Date.now() + 9000000)
+                                    },
                                 ).json({
                                     message: "Succesfully",
                                     userLoggedIn: userRecord.username
-                                })
+                                });
                             }
                             else{
                                 res.status(400).json({message: "Invalid Attempt"});

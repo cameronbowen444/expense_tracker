@@ -18,24 +18,3 @@ module.exports = {
             )
     }
 }
-
-
-
-// const authenticateJwt = async (req, res, next) => {
-//     try {
-//         decodedJwt = await jwt.verify(
-//             req.cookies.userToken,
-//             process.env.FIRST_SECRET_KEY
-//         );
-//         req.body.user_id = decodedJwt._id;
-//         console.log("SUCCESS", decodedJwt);
-//         next();
-//     } catch(error){
-//         console.log("TOKEN ERROR!");
-//         console.log(error);
-//         res.status(400).json({ errorMessage: "You must be logged in to do that!"});
-//     }
-// };
-
-
-// module.exports = { authenticateJwt }

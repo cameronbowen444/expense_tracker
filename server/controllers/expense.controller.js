@@ -77,36 +77,34 @@ module.exports = {
     },
 
     findAllExpensesByUser: (req, res) => {
-
         if(req.jwtpayload.username !== req.params.username) {
-            console.log("not the user!");
-
             User.findOne({username: req.params.username})
                 .then((userNotLoggedIn) => {
                     Expense.find({user_id: userNotLoggedIn._id})
-                    .populate("user_id", "username")
-                    .then((allExpensesFromUser) => {
-                        console.log(allExpensesFromUser);
-                        res.json(allExpensesFromUser);
-                    })
+                        .then((allExpensesFromUser) => {
+                            console.log(allExpensesFromUser);
+                            res.json(allExpensesFromUser);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                            res.status(400).json(err);
+                        })
                 })
-                .catch((error)=> {
-                    console.log(error);
-                    res.status(400).json(error);
+                .catch((err)=> {
+                    console.log(err);
+                    res.status(400).json(err);
                 })
         }
         else{
             console.log("current user")
-            console.log("req.jwtpayload.id", req.jwtpayload.id);
-            Expense.find({ user_id: req.jwtpayload.id })
-                .populate("user_id", "username")
+            Expense.find({user_id: req.jwtpayload.id})
                 .then((allExpensesFromUser) => {
                     console.log(allExpensesFromUser);
                     res.json(allExpensesFromUser);
                 })
-                .catch((error) => {
-                    console.log(error);
-                    res.status(400).json(error);
+                .catch((err) => {
+                    console.log(err);
+                    res.status(400).json(err);
                 })
         }
     }
