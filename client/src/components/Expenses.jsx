@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import moment from 'moment';
-
+import { motion } from "framer-motion";
 
 const Expenses = (props) => {
     const [allExpenses, setAllExpenses] = useState([]);
@@ -42,6 +42,7 @@ const Expenses = (props) => {
             })
     }, []);
 
+
     
     const deleteExpense = (expenseId) => {
         axios.delete(`http://localhost:8000/api/expenses/${expenseId}`)
@@ -73,7 +74,7 @@ const Expenses = (props) => {
 
 
     return(
-        <div>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             <nav className="navbar navbar-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand">Expense Tracker</a>
@@ -122,7 +123,7 @@ const Expenses = (props) => {
                 <h3 className="total">All Expenses: <span className="variable">{count}</span></h3>
                 <h3 className="total">Total Sum Of Expenses: <span className="variable">{sum.toFixed(2)}</span></h3>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

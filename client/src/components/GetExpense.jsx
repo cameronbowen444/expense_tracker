@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import moment from 'moment';
-
+import { motion } from "framer-motion";
 const GetExpense = (props) => {
 
     const [expense, setExpense] = useState("");
@@ -64,7 +64,7 @@ const GetExpense = (props) => {
 
 
     return(
-        <div>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             <nav className="navbar navbar-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand">Expense Tracker</a>
@@ -92,7 +92,7 @@ const GetExpense = (props) => {
                 </div>
             </dl>
             <button className="btn btn-outline-primary btn3" onClick={() => { navigate(-1) }}>Home</button>
-        </div>
+        </motion.div>
     );
 };
 

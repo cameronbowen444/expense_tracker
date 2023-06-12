@@ -1,17 +1,20 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-const MainPage = (props) => {
+import { motion } from "framer-motion";
+const MainPage = () => {
 
     return(
-        <div>
-            <nav className="navbar navbar-dark">
-                <div className="container-fluid">
-                    <a className="navbar-brand">Expense Tracker</a>
-                    <form className='d-flex'>
-                        <Link className='btn btn-outline-light' to="/login">Sign In</Link>
-                    </form>
-                </div>
-            </nav>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+            <div>
+                <nav className="navbar navbar-dark">
+                    <div className="container-fluid">
+                        <a className="navbar-brand">Expense Tracker</a>
+                        <form className='d-flex'>
+                            <Link className='btn btn-outline-light' to="/login">Sign In</Link>
+                        </form>
+                    </div>
+                </nav>
+            </div>
             <div className="center-head">
                 <h1 className="head">Expense Tracker App</h1>
                 <div className="main-desc">
@@ -22,7 +25,7 @@ const MainPage = (props) => {
                 </div>
                 <Link className="main-btn" to="/login" >Login</Link>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

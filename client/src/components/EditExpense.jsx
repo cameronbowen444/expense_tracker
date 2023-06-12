@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Link, useNavigate, useParams} from 'react-router-dom';
-
+import { motion } from "framer-motion";
 
 const EditExpense = (props) => {
 
@@ -68,7 +68,7 @@ const EditExpense = (props) => {
     }
 
     return(
-        <div>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             <nav className="navbar navbar-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand">Expense Tracker</a>
@@ -113,11 +113,13 @@ const EditExpense = (props) => {
                         <label className="form-label">Expense Amount:</label>
                         <input className="form-control" type="number" step="any" value={amount} onChange={(e) => setAmount(e.target.value)} />
                     </div>
-                    <button className="btn1" type="submit">Submit</button>
+                    <div class="d-grid gap-2">
+                        <input className="btn btn-outline-primary btn1" type="submit" value="Update" />
+                    </div>
                 </form>
             </div>
             <button className="btn btn-outline-primary btn3" onClick={() => { navigate(-1) }}>Home</button>
-        </div>
+        </motion.div>
     )
 }
 
